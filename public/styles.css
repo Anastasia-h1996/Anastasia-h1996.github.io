@@ -1,0 +1,170 @@
+body {
+    font-family: sans-serif;
+    background-color: #c4bbbb;
+    color: #eee;
+    padding: 2rem;
+  }
+  
+  input, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+
+
+/* МОДАЛКА */
+
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+body {
+  font-family: 'Uncial Antiqua', cursive;
+  background: #1a1a1a url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+  color: #f0e6d2;
+}
+
+.coin-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.hogwarts-btn {
+  font-family: 'Uncial Antiqua', cursive;
+  background: linear-gradient(145deg, #4d2e0f, #8b5d2c);
+  border: none;
+  color: #fffbe6;
+  padding: 12px 24px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d9ad60;
+  transition: all 0.3s ease;
+}
+.hogwarts-btn:hover {
+  background: #c28840;
+  transform: scale(1.05);
+}
+
+.hogwarts-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+}
+
+.hogwarts-modal-content {
+  background: url('https://i.ibb.co/fvMQmRh/parchment.jpg') center/cover no-repeat;
+  border: 5px solid #8b5d2c;
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 0 0 20px #b47d2e;
+}
+
+.hogwarts-close {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 26px;
+  color: #3d1f00;
+  cursor: pointer;
+}
+
+.modal-title {
+  font-size: 24px;
+  color: #3d1f00;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 18px;
+  color: #3d1f00;
+  margin-bottom: 20px;
+}
+
+.coin-display {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #f7c97e;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* //КОТЕЛ */
+
+.cauldron-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .cauldron {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background: radial-gradient(circle at center, #222 40%, #000 100%);
+    border-radius: 50% / 30%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+  
+  /* Ложка */
+  .spoon {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background: #a67c52;
+    top: 20px;
+    left: 95px;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    animation: stir 2s infinite ease-in-out;
+    z-index: 2;
+  }
+  
+  /* Анимация ложки */
+  @keyframes stir {
+    0% { transform: rotate(-20deg); }
+    50% { transform: rotate(20deg); }
+    100% { transform: rotate(-20deg); }
+  }
+  
+  /* Пузыри */
+  .bubbles::before, .bubbles::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #00ffcc;
+    border-radius: 50%;
+    top: 50px;
+    left: 50%;
+    animation: bubbleUp 3s infinite ease-in-out;
+    opacity: 0.7;
+  }
+  .bubbles::after {
+    left: 40%;
+    animation-delay: 1.5s;
+  }
+  
+  @keyframes bubbleUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-60px) scale(0.5);
+      opacity: 0;
+    }
+  }

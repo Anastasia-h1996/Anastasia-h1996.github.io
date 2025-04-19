@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Email подтвержден</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f4f4f4;
+    }
+    .message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">✅ Email успешно подтверждён!</div>
+  <div>Вы будете перенаправлены на сайт через 5 секунд...</div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 5000);
+  </script>
+</body>
+</html>

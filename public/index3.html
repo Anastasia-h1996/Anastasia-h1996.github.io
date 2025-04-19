@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Моя Браузерная Игра</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Добро пожаловать в игру!</h1>
+
+<!-- Блок с монетами   -->
+<div>
+  <!-- Кнопка получения монет -->
+  <button id="openCoinModal">Получить монеты</button>
+
+  <!-- Модальное окно -->
+  <div id="coinModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; border:1px solid black; padding:20px; z-index:999;">
+    <p id="coinTimerText">Нажмите кнопку ниже, чтобы получить монеты:</p>
+    <button id="collectCoinsBtn">Получить монеты</button>
+    <button onclick="document.getElementById('coinModal').style.display='none'">Закрыть</button>
+  </div>
+
+  <!-- Отображение количества монет -->
+  <p>Ваши монеты: <span id="coinBalance">999999999</span></p>
+</div>
+
+<!-- Авторизация -->
+<div id="login-form">
+  <h2>Авторизация</h2>
+  <form id="loginForm">
+    <label for="login-email">Email:</label>
+    <input type="email" id="login-email" placeholder="Введите email" required>
+
+    <label for="login-password">Пароль:</label>
+    <input type="password" id="login-password" placeholder="Введите пароль" required>
+
+    <label>
+      <input type="checkbox" id="show-login-password"> Показать пароль
+    </label>
+
+    <button type="submit">Войти</button>
+  </form>
+  <button onclick="toggleForm()">Нет аккаунта? Зарегистрироваться</button>
+</div>
+
+  <!-- Форма регистрации -->
+  <div id="register-form" style="display:none;">
+    <h2>Регистрация</h2>
+    <form id="registerForm">
+      <label for="register-username">Логин:</label>
+      <input type="text" id="register-username" placeholder="Введите логин" required>
+
+      <label for="register-email">Email:</label>
+      <input type="email" id="register-email" placeholder="Введите email" required>
+
+      <label for="register-password">Пароль:</label>
+      <input type="password" id="register-password" placeholder="Введите пароль" required>
+
+      <label>
+        <input type="checkbox" id="show-register-password"> Показать пароль
+      </label>
+
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+    <button onclick="toggleForm()">Уже есть аккаунт? Войти</button>
+  </div>
+
+  <!-- Форма игры (когда пользователь вошел) -->
+  <div id="gameArea" style="display: none;">
+    <h2>Игроки онлайн:</h2>
+    <ul id="playersList"></ul>
+    <p>Введите имя и нажмите "Присоединиться":</p>
+    <input type="text" id="username" placeholder="Имя игрока">
+    <button id="joinBtn">Присоединиться</button>
+    <div>
+      <button id="logoutBtn" style="background-color: #c00; color: white;">Выйти</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
