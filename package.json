@@ -7,7 +7,18 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.0",
     "nodemailer": "^6.10.1",
+    "pixi.js": "^8.9.1",
     "socket.io": "^4.8.1",
     "validator": "^13.15.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "anastasia-h1996.github.io",
+  "version": "1.0.0",
+  "main": "auth.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
